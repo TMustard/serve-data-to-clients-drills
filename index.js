@@ -46,8 +46,8 @@ app.get('/:id', function(request, response) {
     var record = findId(cohorts, request.params.id)
 
     if (!record) {
-        response.status = 404
-        response.json ({
+
+      response.status(404).json({
             error: {
                 message: 'No record found!'
             }
