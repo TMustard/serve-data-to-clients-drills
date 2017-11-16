@@ -38,6 +38,7 @@ const app = express()
 app.use(cors())
 
 app.get('/', function(request, response){
+  console.log("hey");
     response.json({data: cohorts})
 })
 
