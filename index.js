@@ -38,16 +38,13 @@ const app = express()
 app.use(cors())
 
 app.get('/', function(request, response){
-  console.log("hey");
     response.json({data: cohorts})
 })
 
 app.get('/:id', function(request, response) {
     var record = findId(cohorts, request.params.id)
-
     if (!record) {
-
-      response.status(404).json({
+        response.status(404).json({
             error: {
                 message: 'No record found!'
             }
